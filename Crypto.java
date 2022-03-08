@@ -74,10 +74,14 @@ public class Crypto
 
         /* Tableau de frequences (vOcc[k]:Nbr d'occurrences de la k-ieme
            lettre de l'alphabet dans la chaine vTxt) */
-        int[] vOcc= new int[26];  
+        int[] vOcc= new int[26];
         //========== TODO Question-1
-        
-
+        for(int i = 0 ; i < vTxt.length() ; i++){
+            if(vTxt.charAt(i) >= 'A' && vTxt.charAt(i) <= 'Z'){
+                vOcc[vTxt.charAt(i) - 65] += 1;
+                //System.out.println("\'" + vTxt.charAt(i) + "\' <=> " + (int)vTxt.charAt(i) + "");
+            }
+        }
         //========== Fin TODO Question-1
         return vOcc;
     } // frequences()
